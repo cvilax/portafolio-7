@@ -6,7 +6,6 @@
 <title>Portafolio Pedagógico</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 
@@ -28,6 +27,7 @@ background:linear-gradient(180deg,#fdfcff,#f0fbff);
 color:var(--text);
 }
 
+/* NAV */
 nav{
 position:sticky;
 top:0;
@@ -56,37 +56,26 @@ nav a:nth-child(3){background:var(--pink);}
 nav a:nth-child(4){background:var(--mint);}
 nav a:nth-child(5){background:var(--lavender);}
 
+/* HEADER */
 header{
 text-align:center;
 padding:70px 20px;
 background:linear-gradient(135deg,#ffc9de,#d9f1ff,#c7f0e9);
 }
 
-header h1{font-size:2.7rem;margin:0;}
+header h1{
+font-size:2.7rem;
+margin:0;
+}
 
 header p{
-max-width:750px;
+max-width:800px;
 margin:auto;
-margin-top:10px;
-line-height:1.6;
+margin-top:12px;
+line-height:1.7;
 }
 
-.badges{
-margin-top:20px;
-display:flex;
-gap:10px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.badge{
-padding:10px 14px;
-border-radius:20px;
-background:white;
-box-shadow:var(--shadow);
-font-weight:600;
-}
-
+/* SECTIONS */
 .container{
 max-width:1100px;
 margin:auto;
@@ -110,63 +99,36 @@ transform:translateY(0);
 }
 
 .section p{
-line-height:1.7;
+line-height:1.75;
 margin-bottom:15px;
 }
 
-h2{
-display:flex;
-align-items:center;
-gap:10px;
-color:#6b4c6b;
+/* CARRUSEL */
+.carousel-container{
+text-align:center;
+margin-top:20px;
 }
 
-.gallery-btn{
-display:inline-block;
-margin-top:15px;
-padding:12px 18px;
-border-radius:20px;
-background:var(--mint);
-text-decoration:none;
-font-weight:600;
-color:#333;
-box-shadow:var(--shadow);
-}
-
-.carousel-container{text-align:center;}
-
-.carousel img{
-width:auto;
+.carousel-img{
 max-width:90%;
-max-height:70vh; /* se adapta a la pantalla */
+max-height:65vh;
+width:auto;
 height:auto;
-object-fit:contain; /* NO recorta la imagen */
+object-fit:contain;
 border-radius:20px;
 box-shadow:var(--shadow);
 transition:0.3s;
 }
 
-.carousel{
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:400px;
-padding:20px;
-}
-
-.carousel img:hover{
-transform:scale(1.03);
-}
-
-.carousel-buttons{
-margin-top:15px;
+.carousel-controls{
+margin-top:12px;
 display:flex;
 justify-content:center;
 gap:20px;
 }
 
-.carousel-buttons button{
-padding:10px 20px;
+.carousel-controls button{
+padding:10px 18px;
 border:none;
 border-radius:20px;
 background:var(--pink);
@@ -174,9 +136,11 @@ cursor:pointer;
 font-weight:bold;
 }
 
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
+font-size:0.9rem;
 }
 
 </style>
@@ -193,23 +157,16 @@ padding:20px;
 </nav>
 
 <header>
-<h1>🌱 Mi Ambiente Potenciador</h1>
+<h1>🌱 Creación de un Ambiente Potenciador</h1>
 <p>
 En este portafolio presento el proceso mediante el cual diseñé y desarrollé un ambiente de aprendizaje en el nivel de parvularia. Mi enfoque estuvo centrado en el aprendizaje activo, el juego y la exploración, entendiendo que los niños construyen conocimiento cuando interactúan directamente con su entorno.
 </p>
-
-<div class="badges">
-<div class="badge">🎨 Creatividad</div>
-<div class="badge">🧠 Aprendizaje significativo</div>
-<div class="badge">🏃 Desarrollo integral</div>
-<div class="badge">💬 Comunicación</div>
-</div>
 </header>
 
 <main class="container">
 
 <section id="intro" class="section">
-<h2>🎯 Mi propósito pedagógico</h2>
+<h2>🎯 Propósito pedagógico</h2>
 
 <p>
 Mi objetivo principal fue crear un ambiente potenciador que respondiera a las necesidades e intereses de los niños, garantizando un espacio seguro, accesible y estimulante. Busqué que cada zona del aula no fuera únicamente un lugar físico, sino una oportunidad de aprendizaje intencionado.
@@ -219,7 +176,6 @@ Mi objetivo principal fue crear un ambiente potenciador que respondiera a las ne
 Durante la planificación consideré aspectos fundamentales como la edad de los niños, la seguridad de los materiales y la organización del espacio, con el fin de promover la autonomía y la participación activa. Comprendí que cuando el ambiente está bien estructurado, los niños se involucran con mayor confianza y construyen aprendizajes más significativos.
 </p>
 
-<a href="#galeria" class="gallery-btn">Ir a galería</a>
 </section>
 
 <section id="lectura" class="section">
@@ -237,7 +193,14 @@ Durante la implementación observé que los niños inicialmente exploraban los l
 Además, noté que la interacción entre ellos favoreció la comunicación espontánea, el respeto por turnos y la escucha activa, aspectos fundamentales en su desarrollo social.
 </p>
 
-<a href="#galeria" class="gallery-btn">Ir a galería</a>
+<div class="carousel-container">
+<img id="lectura-img" class="carousel-img" src="images/img1.jpeg">
+<div class="carousel-controls">
+<button onclick="prev('lectura')">⬅</button>
+<button onclick="next('lectura')">➡</button>
+</div>
+</div>
+
 </section>
 
 <section id="motor" class="section">
@@ -255,7 +218,14 @@ Durante las actividades observé que los niños disfrutaban correr, saltar y des
 Comprendí que el movimiento es una necesidad fundamental en esta etapa, y que al integrarlo de manera planificada se convierte en una herramienta poderosa para el aprendizaje integral.
 </p>
 
-<a href="#galeria" class="gallery-btn">Ir a galería</a>
+<div class="carousel-container">
+<img id="motor-img" class="carousel-img" src="images/img9.jpeg">
+<div class="carousel-controls">
+<button onclick="prev('motor')">⬅</button>
+<button onclick="next('motor')">➡</button>
+</div>
+</div>
+
 </section>
 
 <section id="arte" class="section">
@@ -273,14 +243,21 @@ Observé cómo experimentaban con colores, formas y texturas, desarrollando habi
 Esta experiencia reafirmó mi comprensión de que el arte es un medio fundamental para el desarrollo emocional y cognitivo en la infancia.
 </p>
 
-<a href="#galeria" class="gallery-btn">Ir a galería</a>
+<div class="carousel-container">
+<img id="arte-img" class="carousel-img" src="images/img4.jpeg">
+<div class="carousel-controls">
+<button onclick="prev('arte')">⬅</button>
+<button onclick="next('arte')">➡</button>
+</div>
+</div>
+
 </section>
 
 <section id="actividad" class="section">
 <h2>🧪 Actividad Potenciadora</h2>
 
 <p>
-Diseñé una actividad utilizando materiales reciclados como cartones de huevo, pompones de colores y pinzas elaboradas con el apoyo de los padres. Mi intención fue fortalecer la coordinación ojo-mano, la concentración y la motricidad fina.
+Diseñé una actividad utilizando materiales reciclados como cartones de huevo, pompones de colores y pinzas elaboradas con el apoyo de los padres. Observe que con esta actividad se fortalecio la coordinación ojo-mano, la concentración y la motricidad fina.
 </p>
 
 <p>
@@ -288,23 +265,14 @@ Durante la actividad, los niños comenzaron manipulando los pompones con sus man
 </p>
 
 <p>
-Esta experiencia me permitió observar cómo, a través de materiales simples, se pueden generar aprendizajes significativos cuando existe una intención pedagógica clara. Además, evidenció la importancia de involucrar a la familia en el proceso educativo.
+Esta experiencia me permitió observar cómo, a través de materiales simples, se pueden generar aprendizajes significativos. Además, evidenció la importancia de involucrar a la familia en el proceso educativo.
 </p>
 
-<a href="#galeria" class="gallery-btn">Ir a galería</a>
-</section>
-
-<section id="galeria" class="section">
-<h2>🖼️ Galería de Evidencias</h2>
-
 <div class="carousel-container">
-<div class="carousel">
-<img id="carousel-img" src="images/img1.jpeg">
-</div>
-
-<div class="carousel-buttons">
-<button onclick="prev()">⬅</button>
-<button onclick="next()">➡</button>
+<img id="actividad-img" class="carousel-img" src="images/img7.jpeg">
+<div class="carousel-controls">
+<button onclick="prev('actividad')">⬅</button>
+<button onclick="next('actividad')">➡</button>
 </div>
 </div>
 
@@ -313,11 +281,12 @@ Esta experiencia me permitió observar cómo, a través de materiales simples, s
 </main>
 
 <footer>
-Portafolio Pedagógico 6 - Fátima de Vilanova · 2026
+Portafolio Pedagógico - Fátima de Vilanova· 2026
 </footer>
 
 <script>
 
+// animación
 const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
@@ -328,28 +297,28 @@ entry.target.classList.add('visible');
 });
 sections.forEach(sec=>observer.observe(sec));
 
-const images = [
-"images/img1.jpeg","images/img2.jpeg","images/img3.jpeg",
-"images/img4.jpeg","images/img5.jpeg","images/img6.jpeg",
-"images/img7.jpeg","images/img8.jpeg","images/img9.jpeg",
-"images/img10.jpeg","images/img11.jpeg","images/img12.jpeg",
-"images/img13.jpeg"
-];
+// galerías
+const galleries = {
+lectura:["images/img1.jpeg","images/img2.jpeg","images/img3.jpeg"],
+motor:["images/img9.jpeg","images/img11.jpeg"],
+arte:["images/img4.jpeg","images/img5.jpeg","images/img6.jpeg","images/img11.jpeg"],
+actividad:["images/img7.jpeg","images/img8.jpeg"]
+};
 
-let index = 0;
+let index = {lectura:0,motor:0,arte:0,actividad:0};
 
-function showImage(){
-document.getElementById("carousel-img").src = images[index];
+function show(section){
+document.getElementById(section+"-img").src = galleries[section][index[section]];
 }
 
-function next(){
-index = (index + 1) % images.length;
-showImage();
+function next(section){
+index[section]=(index[section]+1)%galleries[section].length;
+show(section);
 }
 
-function prev(){
-index = (index - 1 + images.length) % images.length;
-showImage();
+function prev(section){
+index[section]=(index[section]-1+galleries[section].length)%galleries[section].length;
+show(section);
 }
 
 </script>
